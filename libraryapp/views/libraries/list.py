@@ -22,7 +22,7 @@ def library_list(request):
             from libraryapp_library l
             """)
 
-            all_libaries = []
+            all_libraries = []
             dataset = db_cursor.fetchall()
 
             for row in dataset:
@@ -31,11 +31,11 @@ def library_list(request):
                 library.title = row['title']
                 library.address = row['address']
 
-                all_libaries.append(library)
+                all_libraries.append(library)
 
-        template = 'libaries/list.html'
+        template = 'libraries/list.html'
         context = {
-            'all_libaries': all_libaries
+            'all_libraries': all_libraries
         }
 
         return render(request, template, context)
@@ -50,8 +50,8 @@ def library_list(request):
             (
                 title, address
             )
-            VALUES (?, ?, ?, ?, ?, ?)
+            VALUES (?, ?)
             """,
             (form_data['title'], form_data['address']))
 
-        return redirect(reverse('libraryapp:libaries'))
+        return redirect(reverse('libraryapp:libraries'))
