@@ -23,7 +23,7 @@ def get_libraries():
         return db_cursor.fetchall()
 
 @login_required
-def book_form(request):
+def library_form(request):
     if request.method == 'GET':
         libraries = get_libraries()
         template = 'libraries/form.html'
