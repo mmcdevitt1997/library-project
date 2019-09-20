@@ -1,0 +1,20 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Library</title>
+  </head>
+  <body>
+    <h1>Library</h1>
+
+    <ol>
+    {% for library in all_libraries %}
+        <li>
+            {{ library.title }}
+            at {{library.address}}
+        </li>
+    {% endfor %}
+    </ol>
+  </body>
+</html>
