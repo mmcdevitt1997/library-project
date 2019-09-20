@@ -13,6 +13,7 @@
         <li>
             {{ library.title }}
             at {{library.address}}
+            <a href "{% url 'libraryapp:library' library.id %}"> click here</a>
         </li>
     {% endfor %}
     </ol>

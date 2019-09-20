@@ -1,0 +1,14 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Librarians</title>
+  </head>
+  <body>
+    <h1>{{librarian.first_name }} {{librarian.last_name}}</h1>
+
+    <div>Email: {{ librarian.email}}</div>
+    <div>Location: {{ librarian.location }}</div>
+  </body>
+</html>
